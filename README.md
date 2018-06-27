@@ -1,6 +1,6 @@
 ## 说明
 
-> 整合action和reducers，使每个项目只需要一个model.js文件就可以书写逻辑
+> 模仿了之前的tarot的接口，整合action和reducers，使每个项目只需要一个model.js文件就可以书写逻辑
 
 ## 用法
 
@@ -13,6 +13,13 @@
 
 #### connect(component<React Component>)
 > 用法基本和react-redux的相同，只不过不需要传递mapstate和mapdispatch，默认全部传递
+
+#### dispatch({type: 'testPage/changeName', payload: {name: 'xxx'}})
+
+> 使用connect包装过的组件，会在props拥有dispatch方法，而且不需要写action creator，type类型用`/`分开，斜杠前是model的name，斜杠后是方法的名称， payload会在对应的方法的第二个参数出现
+
+
+
 
 例子：
 ```javascript
@@ -64,3 +71,5 @@ export default {
 };
 
 ```
+
+> `注意：有一点一定要注意，sync和async方法，不要重名，否则只会调用async里的方法。`
