@@ -73,3 +73,58 @@ export default {
 ```
 
 > `注意：有一点一定要注意，sync和async方法，不要重名，否则只会调用async里的方法。`
+
+
+组件使用例子：
+```js
+import React, {Component} from 'react';
+
+import {connect} from "../../common/stores";
+
+class Home extends Component {
+	constructor(props) {
+		super(props);
+
+		this.handleClick = this.handleClick.bind(this);
+	}
+
+	shouldComponentUpdate() {
+		return true;
+	}
+
+	handleClick() {
+		this.props.dispatch({
+			type: 'testPage/changeName',
+			payload: {
+				name: 'iii'
+			}
+		});
+		this.props.dispatch({
+			type: 'testPage/changeAge',
+			payload: {
+				name: 'kkkkkk'
+			}
+		});
+	}
+
+	render() {
+
+		return (
+			<div>
+				<div>
+					{this.props.testPage.name}
+				</div>
+				<button
+					onClick={this.handleClick}
+					type="button"
+				>
+					我是大按钮
+				</button>
+			</div>
+		);
+	}
+}
+
+export default connect(Home);
+
+```
