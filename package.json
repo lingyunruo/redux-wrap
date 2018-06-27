@@ -1,0 +1,25 @@
+{
+  "name": "redux-wrap",
+  "version": "0.0.1",
+  "description": "模仿tarot来着",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lingyunruo/redux-wrap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lingyunruo/redux-wrap/issues"
+  },
+  "homepage": "https://github.com/lingyunruo/redux-wrap#readme",
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
+  }
+}
